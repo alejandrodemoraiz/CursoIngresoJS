@@ -26,7 +26,7 @@ function verificar()
 {
 	numero=document.getElementById('numero').value;
 
-contadorIntentos+1
+	contadorIntentos=contadorIntentos+1
 	if(numero==numeroSecreto){
 	switch (contadorIntentos) {
 	case "1":
