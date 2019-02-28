@@ -1,47 +1,70 @@
 function mostrar()
 {
-  var notas;
-  var sexo;
-  var promedio;
-  var notaBajo = 11;
-  var sexoBajo;
-  var contadorsexo = 0;
-  var contadorVar = 0;
-  
-var contador = 0;
-  while (contador< 5) {
-    contador ++;
-    notas =prompt("Ingrese nota del alunmno numero " + contador);
-    notas = parseInt(notas);
-    while (notas < 1 || notas > 10)
-    {
-      notas =prompt("invalido! Ingrese nota del alunmno numero " + contador);
-    notas= parseInt(notas);
-  }
+var notas;
+var sexo;
+var contador;
+var acumuladornotas;
+var notaMasBaja;
+var notaMAsAlta;
+var promedio;
+var sexoMasBajo;
+var varonesAprobados;
+contador = 0;
+acumuladornotas = 0;
+varonesAprobados=0;
 
 
-while (contadorsexo < 5) {
-  contadorsexo ++;
-  sexo = prompt(" Ingrese sexo del estudiante " +  contadorsexo+" \n ingrese: \n m para masculino \n f para femenino" );
-while(sexo != "m" && sexo != "f"){
-  sexo= prompt("INVALIDO Ingrese sexo del estudiante " +  contadorsexo+ " \n ingrese: \n m para masculino \n f para femenino");
-
-}
-promedio;
-}
-if ( notas < notaBajo)
+while (contador < 5)
   {
-  notaBajo= notas;
-  sexoBajo = sexo;
-    }
-    if (sexo == "m" && notas > 5 ) {
-      contadorVar ++;
+    contador++
+  notas= prompt(" ingrese calificacion");
+  notas = parseInt(notas);
+  acumuladornotas = acumuladornotas + notas;
+      while (notas > 10 || notas < 1)
+      {
+        notas= prompt(" ERROR! ingrese calificacion");
+        notas = parseInt(notas);
+      }
 
-    }
+  sexo= prompt("Ingrese f 0 m");
+      while (sexo != "f" && sexo != "m")
+      {
+          sexo= prompt("ERROR! Ingrese f 0 m");
+      }
+
+      if (contador == 1)
+          {
+        notaMasBaja = notas;
+        sexoMasBajo = sexo;
+        notaMAsAlta = notas;
+      }
+      else
+      {
+        if (notas< notaMasBaja)
+        {
+          notaMasBaja = notas;
+          sexoMasBajo = sexo;
+        }
+        else {
+            notaMAsAlta = notas;
+            }
+
+
+
+
+
+
+      }
+if (notas > 5 && sexo == "m")
+{
+
+varonesAprobados = varonesAprobados + 1 ;
+
 }
 
-promedio = (notas * contador) / contador;
-alert("el promedio de las notas es de " + promedio);
-alert(" aprobaron " + contadorVar + " varones");
-alert(" la nota mas baja es de "+ notaBajo + " y corresponde al sexo " + sexoBajo + ".");
+  }
+promedio = acumuladornotas/ contador;
+alert(promedio);
+alert(" la nota mas baja es de " + notaMasBaja + "y su sexo es " + sexoMasBajo + " .");
+alert(" los varones aprobados son " + varonesAprobados + " .");
 }
