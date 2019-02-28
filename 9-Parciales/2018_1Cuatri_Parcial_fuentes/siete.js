@@ -7,21 +7,27 @@ function mostrar()
   var sexoBajo;
   var contadorsexo = 0;
   var contadorVar = 0;
+  
 var contador = 0;
   while (contador< 5) {
     contador ++;
     notas =prompt("Ingrese nota del alunmno numero " + contador);
     notas = parseInt(notas);
-    while (notas < 1 || notas > 10) {notas =prompt("invalido! Ingrese nota del alunmno numero " + contador);
-    notas= parseInt(notas);}
+    while (notas < 1 || notas > 10)
+    {
+      notas =prompt("invalido! Ingrese nota del alunmno numero " + contador);
+    notas= parseInt(notas);
+  }
 
-}
+
 while (contadorsexo < 5) {
   contadorsexo ++;
   sexo = prompt(" Ingrese sexo del estudiante " +  contadorsexo+" \n ingrese: \n m para masculino \n f para femenino" );
 while(sexo != "m" && sexo != "f"){
   sexo= prompt("INVALIDO Ingrese sexo del estudiante " +  contadorsexo+ " \n ingrese: \n m para masculino \n f para femenino");
 
+}
+promedio;
 }
 if ( notas < notaBajo)
   {

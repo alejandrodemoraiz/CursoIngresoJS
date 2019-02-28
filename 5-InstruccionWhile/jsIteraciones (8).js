@@ -21,7 +21,7 @@ var respuesta="si";
 
 
 	}else {
-		negativo = negativo * num;
+		negativo = negativo * num
 	}
 
 

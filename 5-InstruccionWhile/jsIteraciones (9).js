@@ -1,53 +1,42 @@
-
-function Mostrar()
+function mostrar()
 {
+var	numeroIngresado;
+var respuesta;
+var contador;
+var maximo;
+var minimo;
+contador = 0;
+respuesta = "si";
+while (respuesta == "si") {
+ 	contador = contador + 1;
+	numeroIngresado = prompt("Ingrese un numero " + contador + " #");
+	numeroIngresado = parseInt(numeroIngresado);
+respuesta = prompt (" ingrese ==> si, si desea continuar ingresando numeros");
 
-	var contador=0;
-	// declarar variables
-	var numero;
-	var max;
-	var min;
-
-	var respuesta='si';
-
-	while(respuesta=='si')
-	{
-		numero=prompt("Ingrese un numero porfavor");
-		numero=parseInt(numero);
-		respuesta=prompt("Desea ingresar otro numero? ingrese -si para continuar");
-
-		if(contador >0)
-		{
-			max=numero;
-		    min=numero;
-		}
-
-		else
-
-		{
-			if(numero>max)
-			{
-				max=numero;
-			}
-
-			if(numero<min)
-			{
-				min=numero;
-			}
-
-			contador ++;
-
-
+if (contador == 1 ) {
+	  maximo =numeroIngresado;
+	 minimo = numeroIngresado;
 
 	}
+	else {
+		if (numeroIngresado> maximo) {
+			maximo = numeroIngresado;
 
+
+		}if (numeroIngresado < minimo) {
+			minimo = numeroIngresado;
+
+		}
+	}
+
+
+
+
+
+
+
+
+	document.getElementById('maximo').value=maximo;
+	document.getElementById('minimo').value=minimo;
 }
-
-document.getElementById('maximo').value=max;
-document.getElementById('minimo').value=min;
-
-
-
-
-}
-//FIN DE LA FUNCIÓN//
+}//FIN DE LA FUNCIÓN
