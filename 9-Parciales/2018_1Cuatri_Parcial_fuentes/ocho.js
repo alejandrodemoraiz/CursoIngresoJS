@@ -30,15 +30,15 @@ promedio= 0;
 
 while (respuesta == "si")
 {          contador++;
-          letraElegida = prompt("Ingrese una letra");
-          numeroElegido = prompt(" ingrese un numero");
+          letraElegida = prompt("Ingrese una letra" + contador + "#");
+          numeroElegido = prompt(" ingrese un numero" + contador + "#");
           numeroElegido = parseInt(numeroElegido);
           while (numeroElegido < -100 || numeroElegido > 100)
                       {
-                numeroElegido = prompt(" ERROR! ingrese un numero")
+                numeroElegido = prompt(" ERROR! ingrese un numero" + contador + "#")
                       numeroElegido = parseInt(numeroElegido);
                       }
-          respuesta = prompt(" desea continuar? de ser asi escriba ==> si ");
+          respuesta = prompt(" desea continuar? de ser asi escriba ==> si " + contador + "#");
 
 if (numeroElegido %2 == 0)
 {
@@ -94,7 +94,7 @@ promedio = acumuladorPositivos / contadorPositivos;
 document.write(" la cantidad de pares es de :" + contadorNumerosPares + "cantidad de numeros impares:" + contadorNumerosImpares +
 "la cantidad de 0 es de :" + contadorceros+ "el promedio de los positivos es de:" + promedio+
 "la suma de los numeros negativos es de:" +acumuladorNegativo +
-" el numero y la letra maximos si " + maximo + letraDeNumeroMaximo + " y el numero minimo es " + minimo + "." );
+" el numero y la letra maximos si " + maximo + " "+ letraDeNumeroMaximo + " y el numero minimo es " + minimo + "." );
 
 
 }
