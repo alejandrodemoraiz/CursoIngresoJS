@@ -1,100 +1,84 @@
 function mostrar()
 {
-var numeroElegido;
-var letraElegida;
-var contador;
-var respuesta;
-var contadorNumerosPares;
-var contadorNumerosImpares;
-var contadorceros;
-var contadorPositivos;
-var acumuladorPositivos;
-var promedioPositivos;
-var acumuladorNegativo;
-var numeroMaximo;
-var numeroMinimo;
-var letraDeNumeroMaximo;
-var letraDeNumerominimo;
-
-respuesta = "si";
-contador = 0;
-contadorNumerosPares = 0;
-contadorNumerosImpares = 0;
-contadorceros = 0;
-contadorPositivos =0;
-acumuladorPositivos =0;
-acumuladorNegativo = 0;
-promediopositivos= 0;
-promedio= 0;
+ var numeroIngresado;
+ var letraIngresada;
+ var respuesta;
+ var contador;
+ var cantidadpares;
+ var cantidadImpares;
+ var sumaDePositivo;
+ var sumaDeNegativos;
+ var promedio;
+ var cantidadDeCeros;
+ var numeroMaximo;
+ var letraMaximo;
+ var numeroMinimo;
+ var letraMinimo;
+ contador = 0;
+ sumaDePositivo = 0;
+ cantidadpares = 0;
+ cantidadImpares = 0;
+ sumaDeNegativos = 0;
+ cantidadDeCeros = 0;
 
 
-while (respuesta == "si")
-{          contador++;
-          letraElegida = prompt("Ingrese una letra" + contador + "#");
-          numeroElegido = prompt(" ingrese un numero" + contador + "#");
-          numeroElegido = parseInt(numeroElegido);
-          while (numeroElegido < -100 || numeroElegido > 100)
-                      {
-                numeroElegido = prompt(" ERROR! ingrese un numero" + contador + "#")
-                      numeroElegido = parseInt(numeroElegido);
-                      }
-          respuesta = prompt(" desea continuar? de ser asi escriba ==> si " + contador + "#");
+ respuesta = "si";
+ while (respuesta == "si" )
+      {
+      contador = contador + 1;
+       numeroIngresado = prompt("Ingrese un numero "+ contador + "#");
+       letraIngresada= prompt("ingrese una letra");
+     numeroIngresado= parseInt(numeroIngresado);
 
-if (numeroElegido %2 == 0)
-{
- contadorNumerosPares = contadorNumerosPares + 1;
+     while (numeroIngresado < -100 || numeroIngresado > 100) {
+       numeroIngresado = prompt("ERROR!!! Ingrese un numero "+ contador + "#");
+     numeroIngresado= parseInt(numeroIngresado)
 
+
+     }
+     respuesta = prompt("desea seguir ingresando ==> si");
+
+if (numeroIngresado %2 ==0 && numeroIngresado != 0) {
+  cantidadpares= cantidadpares + 1;
 }else {
-  contadorNumerosImpares = contadorNumerosImpares + 1;
-
+  cantidadImpares = cantidadImpares + 1;
 }
-if (numeroElegido == 0) {
-  contadorceros = contadorceros + 1;
-
-}
-if (numeroElegido > 0) {
-  contadorPositivos = contadorPositivos + 1;
-  acumuladorPositivos= acumuladorPositivos + numeroElegido;
-
-}
-else {
-    acumuladorNegativo = acumuladorNegativo + numeroElegido;
-}
-
-if (contador == 1) {
-  maximo = numeroElegido;
-  letraDeNumeroMaximo = letraElegida;
-  minimo = numeroElegido;
-  letraDeNumerominimo = letraElegida;
-
-
+if (numeroIngresado > 0)
+      {
+  sumaDePositivo = sumaDePositivo + numeroIngresado;
 }else {
-        if (numeroElegido > maximo)
-        {
-          maximo = numeroElegido;
-          letraDeNumeroMaximo = letraElegida;
+ sumaDeNegativos = sumaDeNegativos + numeroIngresado;
+}
+if (numeroIngresado == 0){
+  cantidadDeCeros = cantidadDeCeros + 1;
+}
+if (contador ==1)
+      {
+   numeroMaximo= numeroIngresado;
+   letraMaximo = letraIngresada;
+   numeroMinimo = numeroIngresado;
+   letraMinimo = letraIngresada;
 
-        }
-        if (numeroElegido < minimo)
-        {
-          minimo = numeroElegido;
-          letraDeNumerominimo = letraElegida;
-
-
-        }
-
+ }
+ else {
+        if (numeroIngresado> numeroMaximo)
+            {
+          numeroMaximo= numeroIngresado;
+          letraMaximo = letraIngresada;
+            }
+    else {
+      numeroMinimo = numeroIngresado;
+      letraMinimo = letraIngresada;
     }
-}
-
-
-
-
-promedio = acumuladorPositivos / contadorPositivos;
-
-document.write(" la cantidad de pares es de :" + contadorNumerosPares + "cantidad de numeros impares:" + contadorNumerosImpares +
-"la cantidad de 0 es de :" + contadorceros+ "el promedio de los positivos es de:" + promedio+
-"la suma de los numeros negativos es de:" +acumuladorNegativo +
-" el numero y la letra maximos si " + maximo + " "+ letraDeNumeroMaximo + " y el numero minimo es " + minimo + "." );
-
+      }
+ }
+ promedio = sumaDePositivo / contador;
+ alert("la cantidad de pares " +cantidadpares);
+ alert("la cantidad de impares " +cantidadImpares);
+alert(" suma de negativos es de " + sumaDeNegativos);
+alert(" el promedio de los positivos es de " +  promedio);
+alert(" cantidad de ceros es de " + cantidadDeCeros);
+alert("El número maximo es " +numeroMaximo + "y la letra del máximo "  + letraMaximo);
+alert(" el minimo es " +numeroMinimo +" y su letra es " + letraMinimo);
 
 }
