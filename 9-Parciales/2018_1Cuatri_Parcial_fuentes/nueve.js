@@ -81,6 +81,7 @@ function mostrar()
 
      }
    }
+
 promedio = pesoTotalProductos/ contador;
 
 document.write( " la cantidad de temperaturas pares es de " +cantidadDeTemperaturasPares + "<br>" +
