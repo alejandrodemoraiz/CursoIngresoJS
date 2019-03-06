@@ -1,9 +1,11 @@
 function mostrar()
 {
-  var nombreIngresado;
-  var localidadIngresada;
-  nombreIngresado = document.getElementById('elNombre').value;
-  localidadIngresada = document.getElementById('laLocalidad').value;
+ var nombreIngresado;
+ var localidadIngresada;
+ var nombreYLocalidad;
+ nombreIngresado = document.getElementById("elNombre").value;
+localidadIngresada = document.getElementById("laLocalidad").value;
 
-  alert("usted es " + nombreIngresado+ " y vive en la localidad de " + localidadIngresada);
+nombreYLocalidad =("Usted es " + nombreIngresado+ " y vive en la localidad de " + localidadIngresada + ".");
+ alert(nombreYLocalidad);
 }

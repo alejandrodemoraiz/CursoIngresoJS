@@ -1,25 +1,33 @@
 function mostrar()
 {
-var planeta;
-planeta = prompt(" planeta del sistema solar:")
-switch (planeta) {
-  case "mercurio":
-  case "venus":
-    mensaje = "acá hace más calor"
-    break;
-  case "tierra":
-  mensaje = "Aca vivimos"
-  break;
-  case "marte":
-  case "jupiter":
-  case "saturno":
-  case "urano":
-  case "neptuno":
-  break;
-  mensaje = "Aca hace mas frio";
-  default: alert(" ese planeta no esta en nuestro sistema solar");
-  break;
+var planetaElegido;
+//
+planetaElegido = prompt(" ingrese un planeta del sistema solar...");
 
-}
+switch(planetaElegido)
+  {
+      case "tierra":
+      mensaje = "acá vivimos";
+      break;
+      case "mercurio":
+      case "venus":
+       mensaje = " aca hace mas calor";
+       break;
+       case "marte":
+       case "jupiter":
+       case "saturno":
+       case "urano":
+       case "neptuno":
+       mensaje = "aca hace mas frio";
+       break;
+       case "pluton":
+       mensaje = " ah re, pluton no mas es un planeta";
+       break;
+default: mensaje = " Error! ese planeta no corresponde al sistema solar";
+     }
+
 alert(mensaje);
+
+
+
 }

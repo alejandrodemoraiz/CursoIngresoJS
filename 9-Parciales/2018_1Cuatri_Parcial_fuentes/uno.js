@@ -1,15 +1,13 @@
 
 function mostrar()
 {
-var largo;
-var ancho;
+ var ancho;
+ var largo;
 var perimetro;
-ancho = prompt(" centimetros de ancho");
-largo = prompt("centimetros de largo");
-ancho=parseInt(ancho);
-largo=parseInt(largo);
-perimetro = (ancho + largo)*2;
-alert("El perimetro es de " + perimetro);
+ //
+ ancho = prompt(" Ingrese el ancho del rectangulo");
+ largo = prompt("Ingrese el largo  del rectangulo");
+ perimetro = (ancho * 2) + (largo * 2);
 
-
+ alert(perimetro);
 }
